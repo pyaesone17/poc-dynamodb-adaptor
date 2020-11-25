@@ -1,4 +1,4 @@
-package dynamodb
+package repository
 
 import (
 	"context"
@@ -10,11 +10,10 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface"
-	"github.com/pyaesone17/poc-module/framework"
 )
 
 // NewRepository is factory
-func NewRepository() framework.DataAdaptor {
+func NewRepository() Adaptor {
 	config := aws.NewConfig()
 	sess, _ := session.NewSession(config)
 	sess = session.Must(session.NewSession(config))

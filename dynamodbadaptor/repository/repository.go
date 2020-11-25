@@ -10,10 +10,11 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface"
+	"github.com/pyaesone17/poc-dynamodb-adaptor/dynamodbadaptor"
 )
 
 // NewRepository is factory
-func NewRepository() Adaptor {
+func NewRepository() dynamodbadaptor.Adaptor {
 	config := aws.NewConfig()
 	sess, _ := session.NewSession(config)
 	sess = session.Must(session.NewSession(config))
